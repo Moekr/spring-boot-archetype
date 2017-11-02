@@ -1,0 +1,16 @@
+server:
+    port: 8080
+spring:
+    datasource:
+        url: jdbc:sqlite:/tmp/sqlite/${artifactId}.db
+    jpa:
+        database-platform: ${groupId}.${subPackage}.data.dialect.SQLite3Dialect
+        properties:
+            hibernate:
+                show_sql: false
+    thymeleaf:
+        cache: false
+security:
+    user:
+        name: admin
+        password: admin

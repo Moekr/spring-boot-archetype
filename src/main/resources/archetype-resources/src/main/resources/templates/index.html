@@ -1,0 +1,24 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="${symbol_pound}C8C8C8"/>
+    <title th:text="'Spring Boot Application'"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
+</head>
+<body>
+<div class="main">
+    <h1>
+        <a th:href="@{/}">Spring Boot Application</a>
+    </h1>
+    <div th:each="entity,state:${symbol_dollar}{entities}">
+        <p>
+            <a th:href="'/entity/'+${symbol_dollar}{entity.id}" th:text="${symbol_dollar}{entity.name}"/>
+        </p>
+    </div>
+</div>
+</body>
+</html>

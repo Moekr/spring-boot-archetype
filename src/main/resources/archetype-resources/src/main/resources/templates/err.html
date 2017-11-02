@@ -1,0 +1,22 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="${symbol_pound}C8C8C8"/>
+    <title th:text="'Error | Spring Boot Application'"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
+</head>
+<body>
+<div class="main">
+    <h1>Oops，error occurred……</h1>
+    <p th:text="'Code: '+${symbol_dollar}{error}"/>
+    <p th:text="'Message: '+${symbol_dollar}{message}"/>
+    <p><a th:href="@{/}" th:text="Back"/></p>
+    <p th:if="${symbol_dollar}{stack}">Stack Trace:</p>
+    <pre><code th:text="${symbol_dollar}{stack}" th:if="${symbol_dollar}{stack}"/></pre>
+</div>
+</body>
+</html>

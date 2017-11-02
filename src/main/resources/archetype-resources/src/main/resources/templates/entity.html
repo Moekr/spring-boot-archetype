@@ -1,0 +1,23 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="${symbol_pound}C8C8C8"/>
+    <title th:text="${symbol_dollar}{entity.name}+' | Spring Boot Application'"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
+</head>
+<body>
+<div class="main" align="center">
+    <p th:text="'ID: '+${symbol_dollar}{entity.id}"/>
+    <p th:text="'Name: '+${symbol_dollar}{entity.name}"/>
+    <p th:text="'Create time: '+${symbol_dollar}{entity.createdAt}"/>
+    <p th:text="'Modify time: '+${symbol_dollar}{entity.modifiedAt}"/>
+    <p>Content:</p>
+    <p th:text="${symbol_dollar}{entity.content}"/>
+    <p><a th:href="@{/}" th:text="Back"/></p>
+</div>
+</body>
+</html>
