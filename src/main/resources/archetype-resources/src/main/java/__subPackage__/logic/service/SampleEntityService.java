@@ -52,9 +52,9 @@ public class SampleEntityService {
     }
 
     @Transactional
-    public SampleEntityVo deleteSampleEntity(int entityId){
+    public void deleteSampleEntity(int entityId){
         SampleEntity entity = entityDao.findById(entityId);
         ToolKit.assertNotNull(entityId, entity);
-        return new SampleEntityVo(entityDao.delete(entity));
+        entityDao.delete(entity);
     }
 }
