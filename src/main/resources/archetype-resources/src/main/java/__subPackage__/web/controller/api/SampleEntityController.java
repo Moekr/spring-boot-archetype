@@ -41,7 +41,7 @@ public class SampleEntityController {
 
     @DeleteMapping("/entity/{entityId}")
     public Map<String, Object> deleteSampleEntity(@PathVariable int entityId){
-        entityService.deleteSampleEntity(entityId)
+        entityService.deleteSampleEntity(entityId);
         return ToolKit.emptyResponseBody();
     }
 }
