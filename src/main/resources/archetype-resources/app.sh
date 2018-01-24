@@ -52,7 +52,7 @@ function start {
     then
         if [ ! -d ${symbol_dollar}{log_dir} ]
         then
-            mkdirs ${symbol_dollar}{log_dir}
+            mkdir ${symbol_dollar}{log_dir}
         fi
         java -server -jar ${symbol_dollar}{path}/${symbol_dollar}{name}-${symbol_dollar}{version}.jar --spring.config.location=${symbol_dollar}{config_file} 2>&1 >${symbol_dollar}{log_dir}/${symbol_dollar}(date +${symbol_dollar}{log_name}) &
         local pid=${symbol_dollar}(echo -e "${symbol_dollar}!${symbol_escape}c")
